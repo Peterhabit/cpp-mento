@@ -5,15 +5,15 @@ using std::cout;
 class Cat {
 private: //생략가능
 	int age;
-	char name[20];
-	// const char* name; //A
+	char name1[20];
+	// const char* name1; //A
 public:
 	Cat(int age, const char* n) {
 		this->age = age;
-		strcpy(name, n); // name=n; //A
-		cout << name << "고양이 객체가 만들어졌어요.\n";
+		strcpy(name1, n); // name1=n; //A
+		cout << name1 << "고양이 객체가 만들어졌어요.\n";
 	}
-	~Cat() { cout << name << "객체 바이\n"; };
+	~Cat() { cout << name1 << "객체 바이\n"; };
 	int getAge();
 	const char* getName();
 	void setAge(int age);
@@ -27,16 +27,16 @@ void Cat::setAge(int age) {
 	this->age = age;
 }
 void Cat::setName(const char* pName) {
-	strcpy(name, pName);
+	strcpy(name1, pName);
 	//strcpy(대상주소, 원본주소);
 	//strcpy_s(대상주소, 대상의길이, 원본주소);
-	//name=pName; //A
+	//name1=pName; //A
 }
 const char* Cat::getName() {
-	return name;
+	return name1;
 }
 void Cat::meow() {
-	cout << name << "고양이가 울어요\n";
+	cout << name1 << "고양이가 울어요\n";
 }
 int main() {
 	Cat nabi(1, "나비"), yaong(1, "야옹"), * pNabi;
